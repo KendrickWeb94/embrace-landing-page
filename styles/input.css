@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* 
+
+npx @tailwindcss/cli -i ./styles/input.css -o ./styles/output.css --watch
+
+*/
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+}
+
+@theme {
+  --color-primary: #3461ff;
+  --footer-bg: #fafafa;
+  --color-light-bg: #fafafa;
+  --color-heading: #000000;
+  --color-mdl: "540px";
+}
+
+@layer components {
+  .smooth {
+    @apply transition-all ease-in-out delay-500 duration-500;
+  }
+  .smooth-slow {
+    @apply transition-all ease-in-out delay-200 duration-200;
+  }
+  .mx-container {
+    @apply w-full mx-auto max-w-[85%];
+  }
+  .btn-primary {
+    @apply bg-primary/90 hover:bg-primary text-white font-medium  text-sm px-8 py-4  capitalize cursor-pointer rounded-full;
+  }
+  .btn-white {
+    @apply bg-white/90 hover:bg-white text-heading font-medium text-sm px-8 py-4  capitalize cursor-pointer rounded-full;
+  }
+  .btn-icon {
+    @apply bg-primary/90 hover:bg-primary text-white flex items-center justify-center w-12 h-12 cursor-pointer rounded-full;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .text-paragraph {
+    @apply text-heading/50;
+  }
+}
+
+.grid-cat-3 {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.grid-cat-layout {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.grid-cat-4 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.testimonial-swiper {
+  overflow: visible;
+}
+.testimonial-swiper .swiper-slide {
+  height: auto;
+}
+
+/* Arrow buttons: blue when usable, soft grey when disabled */
+.testimonial-btn {
+  background-color: #3461ff;
+  color: #ffffff;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.testimonial-btn.swiper-button-disabled {
+  background-color: #f4f6fd;
+  color: #a3a8b8;
+  cursor: not-allowed;
+}
+
+/* Smooth, constant-speed scrolling */
+.companies-swiper .swiper-wrapper {
+  transition-timing-function: linear;
+  align-items: center;
+}
+.companies-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* One identical box for every logo: change these two numbers to resize all of them */
+.company-logo {
+  width: 90px !important;
+  height: 44px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps each logo's own proportions inside the box */
+}
+@media (min-width: 768px) {
+  .company-logo {
+    width: 150px;
+    height: 52px;
+  }
+}
+
+/* Optional: if one logo still looks too small or large because of padding
+     inside its SVG, nudge just that one, e.g.
+     .company-logo img[alt="AWS"] { transform: scale(1.3); } */

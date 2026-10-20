@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "General-Sans";
+  src: url("../assets/general-sans/GeneralSans-Bold.otf");
+}
+
+@font-face {
+  font-family: "General-Sans";
+  src: url("../assets/general-sans/GeneralSans-Semibold.otf");
+}
+
+@font-face {
+  font-family: "General-Sans";
+  src: url("../assets/general-sans/GeneralSans-Medium.otf");
+}
+
+@font-face {
+  font-family: "General-Sans";
+  src: url("../assets/general-sans/GeneralSans-Regular.otf");
+}
+
+body {
+  font-family: "General Sans", sans-serif;
+}
